@@ -6,6 +6,8 @@ Uses Cheerio to scrape news articles from a site and allows the user to make com
 
 ### Getting Started
 
+- npm install
+
 ## Technologies used
 
 Node.js
