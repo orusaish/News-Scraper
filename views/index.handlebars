@@ -1,23 +1,35 @@
 <div>
-    <h1 class="card z-depth-3 center-align">Read the Latest from 'The New york Times'</h1>
+    <h1 class="card z-depth-3 center-align" style="color:blue;">Read the Latest from 'The New york Times'</h1>
     <div class="row">
-        <div class="col s3"></div>
-        <h5 class="card z-depth-3 center-align col s6">Click 'Scrape' to get the latest articles</h5>
+        <div class="col-md-2"></div>
+        <p class="center">Click 'Scrape' to get the latest articles</p>
     </div>
 </div>
-<a href='/scrape' method="GET">Scrape</a>
+<div class="row">
+    <div class="col-md-3"></div>
+    <a class="btn btn-primary" data-toggle="collapse" href='/scrape' role="button" aria-expanded="false"
+        aria-controls="collapseExample">
+        Scrape
+    </a>
+</div>
+</div>
+
+<br />
 
 <div class="row">
-    <div class="col s2"></div>
-    <div class="col s8 left-align">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
         {{#each articles}}
         <div class="card-panel">
             <h4>{{this.title}}</h4>
             {{this.summary}}
             {{!-- goes to article.handlebars --}}
-            <a href="/articles/{{this._id}}" class="waves-effect waves-light btn pink lighten-1" id="btnSignUp">Read
+            <br />
+            <a href="/articles/{{this._id}}" class="waves-effect" id="btnSignUp">Read
                 Article</a>
+            <br />
+            <br />
         </div>
         {{/each}}
+
     </div>
-</div>

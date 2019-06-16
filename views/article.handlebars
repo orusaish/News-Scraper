@@ -4,49 +4,75 @@
     <a href="http://nytimes.com/{{article.link}}">Read more</a>
 </div>
 
+<br />
 
 <div class="row">
-    <div class="col s2"></div>
+    <div class="col-md-1"></div>
     <form action="/articles/{{article._id}}/comment" method="POST" class="card-panel col s8">
         <h5>Comment on this Article:</h5>
+        <br />
+
         <div class="row">
             <div class="input-field">
-                <i class="material-icons prefix">perm_identity</i>
+                <label for="exampleInputEmail1">Name</label>
+
                 <input id="icon_prefix" type="text" placeholder="Name" name="name" class="validate active">
             </div>
+            <div class="col-md-1"></div>
             <div class="input-field">
-                <i class="material-icons prefix">comment</i>
+                <label for="exampleInputEmail1">Comment</label>
+
                 <input id="icon_telephone" type="text" placeholder="Comment" name="comment" class="validate active">
             </div>
         </div>
+        <br />
         <!-- Submit Button -->
         <div class="row">
             <div class="input-field">
-                <center><input class="btn add-comment-button pink lighten-1" type="submit" value="Submit"></center>
+                <button type="submit" class="btn btn-primary">Submit</button>
+
             </div>
         </div>
     </form>
+
 </div>
+<br />
+<p>------------------------------------------------------------------------------------</p>
 
 {{!-- comments go here --}}
 <div class="row">
-    <div class="col s2"></div>
-    <div class="col s8">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
         <h5>Comments:</h5>
+        <br />
         {{#if article.comment}}
         {{#each article.comment}}
         <div class="card">
-            <p id="nameComment">{{name}}</p>
-            <p>{{body}}<p>
+            <p id="nameComment">Comment by: {{name}}</p>
+            <p>Comment : {{body}}<p>
         </div>
+        <a class="btn btn-primary" data-toggle="collapse"
+            href="/articles/{{../article._id}}/comments/{{this._id}}/delete" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Delete
+        </a>
+        <br />
+        <br />
+
         {{/each}}
         {{else}}
-        <p>No Comments Yet.</p>
+        <h5>No Comments Yet.</h5>
         {{/if}}
     </div>
 </div>
-
+<p>--------------------------------------------------------------------------------------</p>
 <div class="row">
+    <div class="col-md-2"></div>
     <div class="input-field">
-        <a href="/articles">Back</a>></div>
-</div>
+        <p>Back to Home page</p>
+        <a class="btn btn-primary" data-toggle="collapse" href="/articles" role="button" aria-expanded="false"
+            aria-controls="collapseExample">
+            Back
+        </a>
+
+    </div>

@@ -139,4 +139,34 @@ router.post("/articles/:id/comment", function(req, res) {
     });
 });
 
+router.get("/articles/:article_id/comments/:comment_id/delete", function(
+  req,
+  res
+) {
+  // Use the comment id to find and delete it
+  Comment.findOneAndRemove({ _id: req.params.comment_id }, function(err) {
+    // Log any errors
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      Article.findOneAndUpdate(
+        { _id: req.params.article_id },
+        { $pull: { comment: req.params.comment_id } }
+      )
+        // Execute the above query
+        .exec(function(err) {
+          // Log any errors
+          if (err) {
+            console.log(err);
+            res.send(err);
+          } else {
+            // Or send the note to the browser
+            res.redirect("/articles/" + req.params.article_id);
+          }
+        });
+    }
+  });
+});
+
 module.exports = router;
