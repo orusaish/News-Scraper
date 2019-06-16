@@ -11,12 +11,12 @@ Uses Cheerio to scrape news articles from a site and allows the user to make com
 
 ## Technologies used
 
--Node.js
--Handlebars - http://handlebarsjs.com/
--MongoDB - https://www.mongodb.com/download-center#community
--Mongoose - http://mongoosejs.com/docs/
--express NPM Package - https://www.npmjs.com/package/express
--express-handlebars NPM Package - https://www.npmjs.com/package/express-handlebars
--cheerio NPM Package - https://www.npmjs.com/package/cheerio
--body-parser NPM Package - https://www.npmjs.com/package/body-parser
--request NPM Package - https://www.npmjs.com/package/request
+- Node.js
+- Handlebars - http://handlebarsjs.com/
+- MongoDB - https://www.mongodb.com/download-center#community
+- Mongoose - http://mongoosejs.com/docs/
+- express NPM Package - https://www.npmjs.com/package/express
+- express-handlebars NPM Package - https://www.npmjs.com/package/express-handlebars
+- cheerio NPM Package - https://www.npmjs.com/package/cheerio
+- body-parser NPM Package - https://www.npmjs.com/package/body-parser
+- request NPM Package - https://www.npmjs.com/package/request
